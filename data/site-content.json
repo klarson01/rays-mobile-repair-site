@@ -1,0 +1,60 @@
+{
+  "business": {
+    "name": "Ray's Mobile Repair",
+    "ownerName": "Raymond Johnson",
+    "phone": "608-293-1886",
+    "phoneDisplay": "(608) 293-1886",
+    "phoneHref": "tel:16082931886",
+    "email": "raysmobilerepair@yahoo.com",
+    "emailHref": "mailto:raysmobilerepair@yahoo.com",
+    "location": "Monroe, WI",
+    "serviceArea": "Green County and surrounding areas",
+    "usdot": "3929884",
+    "facebookUrl": "https://www.facebook.com/share/1EH2nsjLZr/"
+  },
+  "branding": {
+    "primaryColor": "#062d1f",
+    "secondaryColor": "#0b3d2b",
+    "accentColor": "#f5b51b"
+  },
+  "siteMessages": {
+    "heroTitle": "Heavy-Duty Mobile Repair in Monroe, WI",
+    "heroSubtitle": "Emergency roadside and on-site repair for trucks, trailers, equipment, and fleet vehicles across Green County and surrounding areas.",
+    "urgentBannerTitle": "Truck down? Call Ray's Mobile Repair.",
+    "urgentBannerText": "For urgent roadside repair, call directly for the fastest response.",
+    "serviceAreaText": "Proudly serving Monroe, Green County, and surrounding Southern Wisconsin communities. Call to confirm availability for your location.",
+    "careersBanner": "Ray's Mobile Repair is looking for dependable diesel and heavy-duty repair help."
+  },
+  "images": {
+    "hero": "assets/images/ray-service-truck-owner.jpg",
+    "owner": "assets/images/ray-service-truck-owner.jpg",
+    "fieldRepair": "assets/images/field-equipment-repair-snow.jpg",
+    "serviceTruckSide": "assets/images/white-service-truck-side.jpg",
+    "serviceTruckCrane": "assets/images/service-truck-crane-trailer.jpg",
+    "servicesSign": "assets/images/services-sign.jpg",
+    "businessCard": "assets/images/business-card-logo-contact.jpg",
+    "logoCloseup": "assets/images/logo-closeup.jpg"
+  },
+  "services": [
+    {
+      "title": "Emergency Repairs",
+      "summary": "Roadside and on-site repair for trucks, trailers, equipment, and fleet vehicles."
+    },
+    {
+      "title": "Onsite DOT Inspections",
+      "summary": "Help keep your fleet compliant, road-ready, and prepared for inspection requirements."
+    },
+    {
+      "title": "Mobile Repair and Maintenance",
+      "summary": "On-site repair and maintenance to reduce downtime and avoid unnecessary trips to the shop."
+    },
+    {
+      "title": "Custom Accessory Install",
+      "summary": "Accessory installation for work trucks, trailers, and equipment setups."
+    },
+    {
+      "title": "Trailer Repairs",
+      "summary": "Repair support for trailer brakes, lights, suspension, electrical issues, and more."
+    }
+  ]
+}

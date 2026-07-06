@@ -1,0 +1,7 @@
+_handoff/
+.agents/
+.codex/
+node_modules/
+.netlify/
+.tmp*/
+*.log
