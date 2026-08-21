@@ -29,6 +29,7 @@
     .then(function (content) {
       hydrateBusinessContent(content);
       hydrateServices(content);
+      hydrateImages(content);
     })
     .catch(function () {
       document.documentElement.classList.add("content-fallback");
@@ -77,6 +78,28 @@
       .join("");
   }
 
+  function hydrateImages(content) {
+    const images = content.images || {};
+
+    document.querySelectorAll("[data-image]").forEach(function (node) {
+      const key = node.getAttribute("data-image");
+      const src = images[key];
+      if (!src) {
+        return;
+      }
+
+      if (node.tagName === "IMG") {
+        node.setAttribute("src", src);
+        return;
+      }
+
+      const overlay = node.getAttribute("data-image-overlay");
+      node.style.backgroundImage = overlay
+        ? overlay + ", url('" + cssUrl(src) + "')"
+        : "url('" + cssUrl(src) + "')";
+    });
+  }
+
   function setText(selector, value) {
     if (!value) {
       return;
@@ -93,6 +116,10 @@
     document.querySelectorAll(selector).forEach(function (node) {
       node.setAttribute("href", value);
     });
+  }
+
+  function cssUrl(value) {
+    return String(value).replace(/'/g, "%27");
   }
 
   function escapeHtml(value) {
