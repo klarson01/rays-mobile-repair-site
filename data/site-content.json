@@ -26,14 +26,25 @@
     "careersBanner": "Ray's Mobile Repair is looking for dependable diesel and heavy-duty repair help."
   },
   "images": {
-    "hero": "assets/images/ray-service-truck-owner.jpg",
-    "owner": "assets/images/ray-service-truck-owner.jpg",
-    "fieldRepair": "assets/images/field-equipment-repair-snow.jpg",
-    "serviceTruckSide": "assets/images/white-service-truck-side.jpg",
-    "serviceTruckCrane": "assets/images/service-truck-crane-trailer.jpg",
+    "homeHero": "assets/images/ray-service-truck-owner.jpg",
+    "homeFieldRepair": "assets/images/field-equipment-repair-snow.jpg",
+    "homeFleet": "assets/images/white-service-truck-side.jpg",
+    "servicesHero": "assets/images/service-truck-crane-trailer.jpg",
     "servicesSign": "assets/images/services-sign.jpg",
-    "businessCard": "assets/images/business-card-logo-contact.jpg",
-    "logoCloseup": "assets/images/logo-closeup.jpg"
+    "servicesTrailer": "assets/images/service-truck-crane-trailer.jpg",
+    "fleetHero": "assets/images/white-service-truck-side.jpg",
+    "fleetWork": "assets/images/service-truck-crane-trailer.jpg",
+    "aboutHero": "assets/images/ray-service-truck-owner.jpg",
+    "aboutOwner": "assets/images/ray-service-truck-owner.jpg",
+    "aboutValues": "assets/images/field-equipment-repair-snow.jpg",
+    "careersHero": "assets/images/ray-service-truck-owner.jpg",
+    "careersWork": "assets/images/ray-service-truck-owner.jpg",
+    "contactHero": "assets/images/business-card-logo-contact.jpg",
+    "contactLogo": "assets/images/logo-closeup.jpg"
+  },
+  "forms": {
+    "serviceRequest": "service-request",
+    "careers": "careers"
   },
   "services": [
     {
