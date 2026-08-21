@@ -1,4 +1,6 @@
 (function () {
+  installBrandLogo();
+
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav = document.querySelector("#site-nav");
 
@@ -35,6 +37,29 @@
       document.documentElement.classList.add("content-fallback");
     });
 
+  function installBrandLogo() {
+    const style = document.createElement("style");
+    style.textContent = [
+      ".brand-logo-crop{display:block;overflow:hidden;position:relative;flex:0 0 auto}",
+      ".brand-logo-crop img{display:block;height:auto;max-width:none;width:100%}",
+      ".brand-logo-header{height:66px;width:150px}",
+      ".brand-logo-footer{height:100px;width:230px;margin-bottom:.75rem}",
+      ".site-header .brand{min-width:150px}",
+      "@media (min-width:900px){.brand-logo-header{height:78px;width:178px}.site-header .brand{min-width:178px}.header-inner{min-height:92px}}",
+      "@media (max-width:420px){.brand-logo-header{height:58px;width:132px}.site-header .brand{min-width:132px}}"
+    ].join("");
+    document.head.appendChild(style);
+
+    document.querySelectorAll("a.brand").forEach(function (brand) {
+      const isFooter = Boolean(brand.closest(".site-footer"));
+      brand.setAttribute("aria-label", "Ray's Mobile Repair home");
+      brand.innerHTML =
+        '<span class="brand-logo-crop ' +
+        (isFooter ? "brand-logo-footer" : "brand-logo-header") +
+        '"><img src="assets/images/business-card-logo-contact.jpg" alt="Ray\'s Mobile Repair"></span>';
+    });
+  }
+
   function hydrateBusinessContent(content) {
     const business = content.business || {};
     const messages = content.siteMessages || {};
@@ -44,7 +69,6 @@
     setText("[data-content='email']", business.email);
     setText("[data-content='service-area']", business.serviceArea);
     setText("[data-content='location']", business.location);
-    setText("[data-content='usdot']", business.usdot);
     setText("[data-content='hero-title']", messages.heroTitle);
     setText("[data-content='hero-subtitle']", messages.heroSubtitle);
     setText("[data-content='urgent-title']", messages.urgentBannerTitle);
