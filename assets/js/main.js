@@ -1,4 +1,6 @@
 (function () {
+  installBrandLogo();
+
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav = document.querySelector("#site-nav");
 
@@ -29,10 +31,34 @@
     .then(function (content) {
       hydrateBusinessContent(content);
       hydrateServices(content);
+      hydrateImages(content);
     })
     .catch(function () {
       document.documentElement.classList.add("content-fallback");
     });
+
+  function installBrandLogo() {
+    const style = document.createElement("style");
+    style.textContent = [
+      ".brand-logo-crop{display:block;overflow:hidden;position:relative;flex:0 0 auto}",
+      ".brand-logo-crop img{display:block;height:auto;max-width:none;width:100%}",
+      ".brand-logo-header{height:66px;width:150px}",
+      ".brand-logo-footer{height:100px;width:230px;margin-bottom:.75rem}",
+      ".site-header .brand{min-width:150px}",
+      "@media (min-width:900px){.brand-logo-header{height:78px;width:178px}.site-header .brand{min-width:178px}.header-inner{min-height:92px}}",
+      "@media (max-width:420px){.brand-logo-header{height:58px;width:132px}.site-header .brand{min-width:132px}}"
+    ].join("");
+    document.head.appendChild(style);
+
+    document.querySelectorAll("a.brand").forEach(function (brand) {
+      const isFooter = Boolean(brand.closest(".site-footer"));
+      brand.setAttribute("aria-label", "Ray's Mobile Repair home");
+      brand.innerHTML =
+        '<span class="brand-logo-crop ' +
+        (isFooter ? "brand-logo-footer" : "brand-logo-header") +
+        '"><img src="assets/images/business-card-logo-contact.jpg" alt="Ray\'s Mobile Repair"></span>';
+    });
+  }
 
   function hydrateBusinessContent(content) {
     const business = content.business || {};
@@ -43,7 +69,6 @@
     setText("[data-content='email']", business.email);
     setText("[data-content='service-area']", business.serviceArea);
     setText("[data-content='location']", business.location);
-    setText("[data-content='usdot']", business.usdot);
     setText("[data-content='hero-title']", messages.heroTitle);
     setText("[data-content='hero-subtitle']", messages.heroSubtitle);
     setText("[data-content='urgent-title']", messages.urgentBannerTitle);
@@ -77,6 +102,28 @@
       .join("");
   }
 
+  function hydrateImages(content) {
+    const images = content.images || {};
+
+    document.querySelectorAll("[data-image]").forEach(function (node) {
+      const key = node.getAttribute("data-image");
+      const src = images[key];
+      if (!src) {
+        return;
+      }
+
+      if (node.tagName === "IMG") {
+        node.setAttribute("src", src);
+        return;
+      }
+
+      const overlay = node.getAttribute("data-image-overlay");
+      node.style.backgroundImage = overlay
+        ? overlay + ", url('" + cssUrl(src) + "')"
+        : "url('" + cssUrl(src) + "')";
+    });
+  }
+
   function setText(selector, value) {
     if (!value) {
       return;
@@ -93,6 +140,10 @@
     document.querySelectorAll(selector).forEach(function (node) {
       node.setAttribute("href", value);
     });
+  }
+
+  function cssUrl(value) {
+    return String(value).replace(/'/g, "%27");
   }
 
   function escapeHtml(value) {
