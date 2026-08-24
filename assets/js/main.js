@@ -40,13 +40,15 @@
   function installBrandLogo() {
     const style = document.createElement("style");
     style.textContent = [
-      ".brand-logo-crop{display:block;overflow:hidden;position:relative;flex:0 0 auto}",
-      ".brand-logo-crop img{display:block;height:auto;max-width:none;width:100%}",
-      ".brand-logo-header{height:66px;width:150px}",
-      ".brand-logo-footer{height:100px;width:230px;margin-bottom:.75rem}",
-      ".site-header .brand{min-width:150px}",
-      "@media (min-width:900px){.brand-logo-header{height:78px;width:178px}.site-header .brand{min-width:178px}.header-inner{min-height:92px}}",
-      "@media (max-width:420px){.brand-logo-header{height:58px;width:132px}.site-header .brand{min-width:132px}}"
+      ".brand-logo{display:block;flex:0 0 auto;line-height:0}",
+      ".brand-logo img{display:block;height:auto;max-width:100%;object-fit:contain}",
+      ".brand-logo-header{width:104px}",
+      ".brand-logo-footer{width:230px;margin-bottom:.75rem}",
+      ".site-header .brand{min-width:104px}",
+      ".site-header .brand-logo img{border:1px solid rgba(255,255,255,.55)}",
+      "@media (min-width:900px){.brand-logo-header{width:112px}.site-header .brand{min-width:112px}.header-inner{min-height:112px}}",
+      "@media (max-width:680px){.brand-logo-header{width:82px}.site-header .brand{min-width:82px}.header-inner{min-height:88px}}",
+      "@media (max-width:420px){.brand-logo-header{width:72px}.site-header .brand{min-width:72px}.header-inner{min-height:82px}}"
     ].join("");
     document.head.appendChild(style);
 
@@ -54,7 +56,7 @@
       const isFooter = Boolean(brand.closest(".site-footer"));
       brand.setAttribute("aria-label", "Ray's Mobile Repair home");
       brand.innerHTML =
-        '<span class="brand-logo-crop ' +
+        '<span class="brand-logo ' +
         (isFooter ? "brand-logo-footer" : "brand-logo-header") +
         '"><img src="assets/images/business-card-logo-contact.jpg" alt="Ray\'s Mobile Repair"></span>';
     });
@@ -151,7 +153,7 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
+      .replace(/\"/g, "&quot;")
       .replace(/'/g, "&#039;");
   }
 })();
