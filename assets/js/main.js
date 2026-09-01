@@ -1,5 +1,6 @@
 (function () {
   installBrandLogo();
+  installFooterCredit();
 
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav = document.querySelector("#site-nav");
@@ -60,6 +61,26 @@
         (isFooter ? "brand-logo-footer" : "brand-logo-header") +
         '"><img src="assets/images/business-card-logo-contact.jpg" alt="Ray\'s Mobile Repair"></span>';
     });
+  }
+
+  function installFooterCredit() {
+    const footer = document.querySelector(".site-footer");
+    if (!footer || footer.querySelector(".sixteen-oaks-credit")) {
+      return;
+    }
+
+    const style = document.createElement("style");
+    style.textContent = [
+      ".sixteen-oaks-credit{max-width:1200px;margin:1.25rem auto 0;padding:1rem 1rem 0;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.78rem;letter-spacing:.02em;color:rgba(255,255,255,.48)}",
+      ".sixteen-oaks-credit span{white-space:normal}"
+    ].join("");
+    document.head.appendChild(style);
+
+    const credit = document.createElement("div");
+    credit.className = "sixteen-oaks-credit";
+    credit.setAttribute("aria-label", "Website credit");
+    credit.innerHTML = "<span>Built by Sixteen Oaks Workflow Solutions</span>";
+    footer.appendChild(credit);
   }
 
   function hydrateBusinessContent(content) {
