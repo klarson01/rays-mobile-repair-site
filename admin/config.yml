@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: feature/content-and-careers-routing
+
+publish_mode: simple
+
+media_folder: "assets/images/managed"
+public_folder: "/assets/images/managed"
+
+collections:
+  - name: "website"
+    label: "Website Manager"
+    files:
+      - name: "customer_content"
+        label: "Ray's Mobile Repair Website"
+        file: "data/customer-content.json"
+        format: "json"
+        fields:
+          - label: "Business Information"
+            name: "business"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Business Name", name: "name", widget: "string" }
+              - { label: "Owner Name", name: "ownerName", widget: "string" }
+              - { label: "Phone Number", name: "phone", widget: "string", hint: "Example: 608-293-1886. The website call links update automatically." }
+              - { label: "Email Address", name: "email", widget: "string", hint: "The website email links update automatically. Netlify form notification recipients are managed separately." }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Service Area", name: "serviceArea", widget: "string" }
+              - { label: "Facebook URL", name: "facebookUrl", widget: "string", required: false }
+
+          - label: "Website Photos"
+            name: "images"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Home - Main Hero", name: "homeHero", widget: "image" }
+              - { label: "Home - Field Repair", name: "homeFieldRepair", widget: "image" }
+              - { label: "Home - Fleet", name: "homeFleet", widget: "image" }
+              - { label: "Services - Hero", name: "servicesHero", widget: "image" }
+              - { label: "Services - Sign", name: "servicesSign", widget: "image" }
+              - { label: "Services - Trailer", name: "servicesTrailer", widget: "image" }
+              - { label: "Fleet Service - Hero", name: "fleetHero", widget: "image" }
+              - { label: "Fleet Service - Work Photo", name: "fleetWork", widget: "image" }
+              - { label: "About - Hero", name: "aboutHero", widget: "image" }
+              - { label: "About - Owner", name: "aboutOwner", widget: "image" }
+              - { label: "About - Values", name: "aboutValues", widget: "image" }
+              - { label: "Careers - Hero", name: "careersHero", widget: "image" }
+              - { label: "Careers - Work Photo", name: "careersWork", widget: "image" }
+              - { label: "Contact - Hero", name: "contactHero", widget: "image" }
+              - { label: "Contact - Logo/Photo", name: "contactLogo", widget: "image" }
