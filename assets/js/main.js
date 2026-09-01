@@ -1,5 +1,6 @@
 (function () {
   installBrandLogo();
+  installFooterCredit();
 
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav = document.querySelector("#site-nav");
@@ -21,14 +22,12 @@
     });
   });
 
-  fetch("data/site-content.json")
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Content file unavailable");
-      }
-      return response.json();
-    })
-    .then(function (content) {
+  Promise.all([
+    fetchJson("data/site-content.json"),
+    fetchJson("data/customer-content.json").catch(function () { return {}; })
+  ])
+    .then(function (results) {
+      const content = mergeContent(results[0], results[1]);
       hydrateBusinessContent(content);
       hydrateServices(content);
       hydrateImages(content);
@@ -36,6 +35,34 @@
     .catch(function () {
       document.documentElement.classList.add("content-fallback");
     });
+
+  function fetchJson(path) {
+    return fetch(path).then(function (response) {
+      if (!response.ok) {
+        throw new Error("Content file unavailable: " + path);
+      }
+      return response.json();
+    });
+  }
+
+  function mergeContent(base, customer) {
+    const merged = Object.assign({}, base || {});
+    merged.business = Object.assign({}, (base && base.business) || {}, (customer && customer.business) || {});
+    merged.images = Object.assign({}, (base && base.images) || {}, (customer && customer.images) || {});
+
+    if (customer && customer.business && customer.business.phone) {
+      merged.business.phone = customer.business.phone;
+      merged.business.phoneDisplay = formatPhone(customer.business.phone);
+      merged.business.phoneHref = phoneHref(customer.business.phone);
+    }
+
+    if (customer && customer.business && customer.business.email) {
+      merged.business.email = customer.business.email;
+      merged.business.emailHref = "mailto:" + customer.business.email;
+    }
+
+    return merged;
+  }
 
   function installBrandLogo() {
     const style = document.createElement("style");
@@ -62,11 +89,31 @@
     });
   }
 
+  function installFooterCredit() {
+    const footer = document.querySelector(".site-footer");
+    if (!footer || footer.querySelector(".sixteen-oaks-credit")) {
+      return;
+    }
+
+    const style = document.createElement("style");
+    style.textContent = [
+      ".sixteen-oaks-credit{max-width:1200px;margin:1.25rem auto 0;padding:1rem 1rem 0;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.78rem;letter-spacing:.02em;color:rgba(255,255,255,.48)}",
+      ".sixteen-oaks-credit span{white-space:normal}"
+    ].join("");
+    document.head.appendChild(style);
+
+    const credit = document.createElement("div");
+    credit.className = "sixteen-oaks-credit";
+    credit.setAttribute("aria-label", "Website credit");
+    credit.innerHTML = "<span>Built by Sixteen Oaks Workflow Solutions</span>";
+    footer.appendChild(credit);
+  }
+
   function hydrateBusinessContent(content) {
     const business = content.business || {};
     const messages = content.siteMessages || {};
 
-    setText("[data-content='phone-display']", business.phoneDisplay);
+    setText("[data-content='phone-display']", business.phoneDisplay || formatPhone(business.phone));
     setText("[data-content='phone']", business.phone);
     setText("[data-content='email']", business.email);
     setText("[data-content='service-area']", business.serviceArea);
@@ -78,8 +125,8 @@
     setText("[data-content='service-area-text']", messages.serviceAreaText);
     setText("[data-content='careers-banner']", messages.careersBanner);
 
-    setHref("[data-link='phone']", business.phoneHref);
-    setHref("[data-link='email']", business.emailHref);
+    setHref("[data-link='phone']", business.phoneHref || phoneHref(business.phone));
+    setHref("[data-link='email']", business.emailHref || (business.email ? "mailto:" + business.email : ""));
     setHref("[data-link='facebook']", business.facebookUrl);
   }
 
@@ -124,6 +171,23 @@
         ? overlay + ", url('" + cssUrl(src) + "')"
         : "url('" + cssUrl(src) + "')";
     });
+  }
+
+  function formatPhone(value) {
+    const digits = String(value || "").replace(/\D/g, "");
+    const local = digits.length === 11 && digits.charAt(0) === "1" ? digits.slice(1) : digits;
+    if (local.length === 10) {
+      return "(" + local.slice(0, 3) + ") " + local.slice(3, 6) + "-" + local.slice(6);
+    }
+    return value || "";
+  }
+
+  function phoneHref(value) {
+    const digits = String(value || "").replace(/\D/g, "");
+    if (!digits) {
+      return "";
+    }
+    return "tel:" + (digits.length === 10 ? "1" + digits : digits);
   }
 
   function setText(selector, value) {
