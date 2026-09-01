@@ -1,4 +1,5 @@
 (function () {
+  routeIdentityTokens();
   installBrandLogo();
   installFooterCredit();
 
@@ -35,6 +36,15 @@
     .catch(function () {
       document.documentElement.classList.add("content-fallback");
     });
+
+  function routeIdentityTokens() {
+    const hash = window.location.hash || "";
+    const isIdentityToken = /#(?:invite_token|recovery_token|confirmation_token|access_token)=/.test(hash);
+    const isAdmin = window.location.pathname.indexOf("/admin") === 0;
+    if (isIdentityToken && !isAdmin) {
+      window.location.replace("/admin/" + hash);
+    }
+  }
 
   function fetchJson(path) {
     return fetch(path).then(function (response) {
