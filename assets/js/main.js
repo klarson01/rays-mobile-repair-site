@@ -107,7 +107,7 @@
 
     const style = document.createElement("style");
     style.textContent = [
-      ".sixteen-oaks-credit{max-width:1200px;margin:1.25rem auto 0;padding:1rem 1rem 0;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.78rem;letter-spacing:.02em;color:rgba(255,255,255,.48)}",
+      ".sixteen-oaks-credit{max-width:1200px;margin:1.25rem auto 0;padding:1rem 1rem 0;border-top:1px solid rgba(255,255,255,.14);text-align:center;font-size:.82rem;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.72)}",
       ".sixteen-oaks-credit span{white-space:normal}"
     ].join("");
     document.head.appendChild(style);
