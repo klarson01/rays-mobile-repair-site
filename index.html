@@ -6,6 +6,7 @@
   <title>Ray's Mobile Repair | Mobile Repair & Trailer Repair in Monroe, WI</title>
   <meta name="description" content="Ray's Mobile Repair provides emergency repairs, onsite DOT inspections, mobile repair and maintenance, custom accessory installs, and trailer repairs in Monroe, Green County, and surrounding areas.">
   <link rel="stylesheet" href="assets/css/styles.css?v=layout-fix-20260706">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Ray's Mobile Repair","founder":"Raymond Johnson","telephone":"+16082931886","email":"raysmobilerepair@yahoo.com","address":{"@type":"PostalAddress","addressLocality":"Monroe","addressRegion":"WI","addressCountry":"US"},"areaServed":"Green County and surrounding areas","url":"https://rays-mobile-repair-preview.netlify.app","image":"assets/images/ray-service-truck-owner.jpg","priceRange":"$$"}</script>
 </head>
 <body>
@@ -130,5 +131,16 @@
   </footer>
   <div class="sticky-call"><a class="btn btn-primary" href="tel:16082931886" data-link="phone">Call Ray's Mobile Repair</a></div>
   <script src="assets/js/main.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
