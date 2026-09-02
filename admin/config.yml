@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: feature/content-and-careers-routing
+  branch: main
 
 publish_mode: simple
 
