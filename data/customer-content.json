@@ -9,20 +9,20 @@
     "facebookUrl": "https://www.facebook.com/share/1EH2nsjLZr/"
   },
   "images": {
-    "homeHero": "assets/images/managed/home/hero.jpg",
-    "homeFieldRepair": "assets/images/managed/home/field-repair.jpg",
-    "homeFleet": "assets/images/managed/home/fleet.jpg",
-    "servicesHero": "assets/images/managed/services/hero.jpg",
-    "servicesSign": "assets/images/managed/services/sign.jpg",
-    "servicesTrailer": "assets/images/managed/services/trailer.jpg",
-    "fleetHero": "assets/images/managed/fleet/hero.jpg",
-    "fleetWork": "assets/images/managed/fleet/work.jpg",
-    "aboutHero": "assets/images/managed/about/hero.jpg",
-    "aboutOwner": "assets/images/managed/about/owner.jpg",
-    "aboutValues": "assets/images/managed/about/values.jpg",
-    "careersHero": "assets/images/managed/careers/hero.jpg",
-    "careersWork": "assets/images/managed/careers/work.jpg",
-    "contactHero": "assets/images/managed/contact/hero.jpg",
-    "contactLogo": "assets/images/managed/contact/logo.jpg"
+    "homeHero": "/assets/images/managed/home/hero.jpg",
+    "homeFieldRepair": "/assets/images/managed/home/field-repair.jpg",
+    "homeFleet": "/assets/images/managed/home/fleet.jpg",
+    "servicesHero": "/assets/images/managed/services/hero.jpg",
+    "servicesSign": "/assets/images/managed/services/sign.jpg",
+    "servicesTrailer": "/assets/images/managed/services/trailer.jpg",
+    "fleetHero": "/assets/images/managed/fleet/hero.jpg",
+    "fleetWork": "/assets/images/managed/fleet/work.jpg",
+    "aboutHero": "/assets/images/managed/about/hero.jpg",
+    "aboutOwner": "/assets/images/managed/about/owner.jpg",
+    "aboutValues": "/assets/images/managed/about/values.jpg",
+    "careersHero": "/assets/images/managed/careers/hero.jpg",
+    "careersWork": "/assets/images/managed/careers/work.jpg",
+    "contactHero": "/assets/images/managed/contact/hero.jpg",
+    "contactLogo": "/assets/images/managed/contact/logo.jpg"
   }
 }
