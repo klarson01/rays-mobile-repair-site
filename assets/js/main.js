@@ -23,8 +23,8 @@
   });
 
   Promise.all([
-    fetchJson("data/site-content.json"),
-    fetchJson("data/customer-content.json").catch(function () { return {}; })
+    fetchJson("/data/site-content.json"),
+    fetchJson("/data/customer-content.json").catch(function () { return {}; })
   ])
     .then(function (results) {
       const content = mergeContent(results[0], results[1]);
@@ -85,7 +85,7 @@
       brand.innerHTML =
         '<span class="brand-logo ' +
         (isFooter ? "brand-logo-footer" : "brand-logo-header") +
-        '"><img src="assets/images/business-card-logo-contact.jpg" alt="Ray\'s Mobile Repair"></span>';
+        '"><img src="/assets/images/rays-original-logo-web.jpg" alt="Ray\'s Mobile Repair"></span>';
     });
   }
 
