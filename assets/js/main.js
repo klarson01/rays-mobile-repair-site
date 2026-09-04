@@ -85,7 +85,7 @@
       brand.innerHTML =
         '<span class="brand-logo ' +
         (isFooter ? "brand-logo-footer" : "brand-logo-header") +
-        '"><img src="/assets/images/rays-original-logo-web.jpg" alt="Ray\'s Mobile Repair"></span>';
+        '"><img src="/assets/images/business-card-logo-contact.jpg?v=official-20260904" alt="Ray\'s Mobile Repair"></span>';
     });
   }
 
