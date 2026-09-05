@@ -1,0 +1,27 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit production URLs to IndexNow
+        run: |
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "www.raysmobilerepair.com",
+              "key": "95575b6694b374a0cfaae8cff08b18ca",
+              "keyLocation": "https://www.raysmobilerepair.com/95575b6694b374a0cfaae8cff08b18ca.txt",
+              "urlList": [
+                "https://www.raysmobilerepair.com/",
+                "https://www.raysmobilerepair.com/services",
+                "https://www.raysmobilerepair.com/fleet-service",
+                "https://www.raysmobilerepair.com/careers",
+                "https://www.raysmobilerepair.com/about",
+                "https://www.raysmobilerepair.com/contact"
+              ]
+            }'
