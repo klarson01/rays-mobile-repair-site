@@ -22,6 +22,6 @@ jobs:
                 "https://www.raysmobilerepair.com/fleet-service",
                 "https://www.raysmobilerepair.com/careers",
                 "https://www.raysmobilerepair.com/about",
-                "https://www.raysmobilerepair.com/contact"
+                "https://www.raysmobilerepair.com/service-request"
               ]
             }'

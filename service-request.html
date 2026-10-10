@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service Request | Ray's Mobile Repair</title>
+  <meta name="description" content="Request mobile repair, trailer repair, DOT inspection, or fleet service from Ray's Mobile Repair in Monroe, Wisconsin.">
+  <link rel="canonical" href="https://www.raysmobilerepair.com/service-request">
+  <link rel="stylesheet" href="assets/css/styles.css?v=service-request-20261010">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/"><span class="brand-mark">RAY'S</span><span class="brand-text"><strong>Mobile Repair</strong><span>Monroe, WI</span></span></a><button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="site-nav" id="site-nav"><ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/fleet-service">Fleet Service</a></li><li><a href="/careers">Careers</a></li><li><a href="/about">About</a></li><li><a href="/service-request" aria-current="page">Service Request</a></li></ul></nav><div class="header-call"><a class="phone-link" href="tel:16082931886" data-link="phone" data-content="phone-display">(608) 293-1886</a><a class="btn btn-primary" href="tel:16082931886" data-link="phone">Call Now</a></div></div></header>
+  <main id="main">
+    <section class="page-hero" data-image="contactHero" data-image-overlay="linear-gradient(90deg, rgba(4,29,21,.92), rgba(4,29,21,.62), rgba(4,29,21,.25))" style="background-image: linear-gradient(90deg, rgba(4,29,21,.92), rgba(4,29,21,.62), rgba(4,29,21,.25)), url('assets/images/business-card-logo-contact.jpg');"><div class="container"><p class="eyebrow">Ray's Mobile Repair</p><h1>SERVICE REQUEST</h1><p class="lead">Need mobile repair, maintenance, DOT inspection, or trailer service? Tell us what is going on and where the vehicle or equipment is located.</p><div class="hero-actions"><a class="btn btn-primary" href="tel:16082931886" data-link="phone">Call 608-293-1886</a><a class="btn btn-light" href="#request-form">Start Request</a></div></div></section>
+    <section class="urgent-banner"><div class="container urgent-inner"><p><strong>Urgent roadside service?</strong><span>For urgent roadside service, call Ray directly at (608) 293-1886.</span></p><a class="btn btn-secondary" href="tel:16082931886" data-link="phone">608-293-1886</a></div></section>
+    <section class="section section-white"><div class="container request-layout">
+      <form class="form request-form" id="request-form" name="service-request" method="POST" action="/thanks.html?form=service" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="service-request">
+        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <p class="form-note">For urgent roadside service, call Ray directly at <a href="tel:16082931886" data-link="phone">(608) 293-1886</a>. Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+
+        <fieldset class="form-group">
+          <legend>Contact Information</legend>
+          <label><span class="label-text">Full Name <span class="req" aria-hidden="true">*</span></span><input type="text" name="full_name" required autocomplete="name"></label>
+          <label><span class="label-text">Phone Number <span class="req" aria-hidden="true">*</span></span><input type="tel" name="phone" required autocomplete="tel"></label>
+          <label><span class="label-text">Email Address</span><input type="email" name="email" autocomplete="email"></label>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Company Information</legend>
+          <label><span class="label-text">Company Name</span><input type="text" name="company_name" autocomplete="organization"></label>
+          <label><span class="label-text">Company Address</span><input type="text" name="company_address" autocomplete="street-address"></label>
+          <div class="form-row form-row-csz">
+            <label><span class="label-text">City</span><input type="text" name="city" autocomplete="address-level2"></label>
+            <label><span class="label-text">State</span><input type="text" name="state" autocomplete="address-level1"></label>
+            <label><span class="label-text">ZIP</span><input type="text" name="zip" inputmode="numeric" autocomplete="postal-code"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Vehicle / Equipment Information</legend>
+          <label><span class="label-text">Vehicle / Equipment Type <span class="req" aria-hidden="true">*</span></span><input type="text" name="vehicle_type" required></label>
+          <label><span class="label-text">VIN #</span><input type="text" name="vin" autocapitalize="characters"></label>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Service Needed</legend>
+          <label><span class="label-text">Urgency / Request Type</span><select name="request_type"><option>Urgent / Roadside</option><option>Scheduled Service</option><option>DOT Inspection</option><option>Fleet / Commercial</option><option>Trailer Repair</option><option>Other</option></select></label>
+          <label><span class="label-text">Location of Vehicle / Equipment <span class="req" aria-hidden="true">*</span></span><input type="text" name="location" required></label>
+          <label><span class="label-text">What's going on? <span class="req" aria-hidden="true">*</span></span><textarea name="message" required></textarea></label>
+          <label><span class="label-text">Upload Photo / File <span class="optional">(optional)</span></span><input type="file" name="attachment" accept="image/*,.pdf"></label>
+        </fieldset>
+
+        <button class="btn btn-primary btn-block" type="submit">Send Service Request</button>
+        <p class="form-footnote">Your request will be sent to Ray's Mobile Repair. For urgent roadside service, please call Ray directly at 608-293-1886.</p>
+      </form>
+
+      <aside class="contact-card request-aside" aria-label="Fastest response">
+        <p class="eyebrow">Fastest Response</p>
+        <p class="request-aside-lead">For urgent roadside service, please call directly.</p>
+        <h2>Ray's Mobile Repair</h2>
+        <p class="request-aside-location" data-content="location">Monroe, WI</p>
+        <dl class="request-aside-details">
+          <dt>Phone:</dt>
+          <dd><a href="tel:16082931886" data-link="phone" data-content="phone-display">(608) 293-1886</a></dd>
+          <dt>Email:</dt>
+          <dd><a href="mailto:raysmobilerepair@yahoo.com" data-link="email" data-content="email">raysmobilerepair@yahoo.com</a></dd>
+        </dl>
+        <h3>Services:</h3>
+        <ul class="request-aside-services">
+          <li>Emergency Repairs</li>
+          <li>Onsite DOT Inspections</li>
+          <li>Mobile Repair &amp; Maintenance</li>
+          <li>Custom Accessory Install</li>
+          <li>Trailer Repairs</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="tel:16082931886" data-link="phone">Call 608-293-1886</a>
+        <img class="request-aside-image" data-image="contactLogo" src="assets/images/managed/contact/logo.jpg" alt="Ray's Mobile Repair logo">
+      </aside>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="/"><span class="brand-mark">RAY'S</span><span class="brand-text"><strong>Mobile Repair</strong><span>Monroe, WI</span></span></a><p>Emergency and non-urgent mobile repair requests for Green County and surrounding areas.</p></div><div><h3>Contact</h3><div class="footer-links"><a href="tel:16082931886" data-link="phone">Phone: <span data-content="phone">608-293-1886</span></a><a href="mailto:raysmobilerepair@yahoo.com" data-link="email">Email: <span data-content="email">raysmobilerepair@yahoo.com</span></a><span>Location: <span data-content="location">Monroe, WI</span></span></div></div><div><h3>Pages</h3><div class="footer-links"><a href="/">Home</a><a href="/services">Services</a><a href="/fleet-service">Fleet Service</a><a href="/careers">Careers</a><a href="/about">About</a></div></div></div></footer><div class="sticky-call"><a class="btn btn-primary" href="tel:16082931886" data-link="phone">Call Ray's Mobile Repair</a></div><script src="assets/js/main.js"></script>
+</body>
+</html>

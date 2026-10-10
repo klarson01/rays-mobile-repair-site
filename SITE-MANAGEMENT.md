@@ -32,9 +32,9 @@ Change only the path on the right side of the slot you want to update. Example:
 
 Use web-friendly JPG, PNG, or WebP images and avoid very large original camera files when possible.
 
-## Contact/service request delivery
+## Service request delivery
 
-The contact form is named `service-request` and is handled by Netlify Forms. It accepts an optional photo attachment.
+The Service Request form (`/service-request`, also served at `/contact`) is named `service-request` and is handled by Netlify Forms. It accepts an optional photo or PDF attachment.
 
 In the Netlify site dashboard, configure an email notification for the `service-request` form so new requests are delivered to Ray's preferred inbox.
 

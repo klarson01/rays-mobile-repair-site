@@ -47,5 +47,5 @@ collections:
               - { label: "About - Values", name: "aboutValues", widget: "image" }
               - { label: "Careers - Hero", name: "careersHero", widget: "image" }
               - { label: "Careers - Work Photo", name: "careersWork", widget: "image" }
-              - { label: "Contact - Hero", name: "contactHero", widget: "image" }
-              - { label: "Contact - Logo/Photo", name: "contactLogo", widget: "image" }
+              - { label: "Service Request - Hero", name: "contactHero", widget: "image" }
+              - { label: "Service Request - Logo/Photo", name: "contactLogo", widget: "image" }

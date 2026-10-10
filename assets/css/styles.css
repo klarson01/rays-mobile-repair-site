@@ -748,3 +748,137 @@ p {
     background-position: 12% 18%;
   }
 }
+
+/* Service Request page */
+.request-layout {
+  align-items: start;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.request-form {
+  min-width: 0;
+}
+
+.form-group {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.form-group legend {
+  color: var(--green-800);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  padding: 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.form label {
+  min-width: 0;
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.form input[type="file"] {
+  background: var(--gray-100);
+  min-height: 0;
+  padding: 0.6rem;
+}
+
+.form .req {
+  color: #b42318;
+}
+
+.form .optional {
+  color: var(--gray-700);
+  font-weight: 400;
+}
+
+.form-footnote {
+  color: var(--gray-700);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.btn-block {
+  justify-content: center;
+  width: 100%;
+}
+
+.request-aside h2 {
+  margin-bottom: 0;
+}
+
+.request-aside h3 {
+  margin: 1.25rem 0 0.5rem;
+}
+
+.request-aside-lead {
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.request-aside-location {
+  margin: 0.25rem 0 1rem;
+}
+
+.request-aside-details {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+}
+
+.request-aside-details dt {
+  font-weight: 800;
+}
+
+.request-aside-details dd {
+  margin: 0 0 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.request-aside-services {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+}
+
+@media (min-width: 560px) {
+  .form-row-csz {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+}
+
+@media (min-width: 920px) {
+  .request-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  }
+
+  .request-aside {
+    position: sticky;
+    top: 6.5rem;
+  }
+}
+
+.request-aside h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.request-aside-image {
+  border-radius: var(--radius);
+  display: block;
+  height: auto;
+  margin-top: 1.25rem;
+  width: 100%;
+}

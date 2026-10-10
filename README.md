@@ -6,7 +6,7 @@ This repo is intentionally separate from the Aethralion SaaS project. Do not add
 
 ## Files
 
-- `index.html`, `services.html`, `fleet-service.html`, `careers.html`, `about.html`, `contact.html`: static website pages.
+- `index.html`, `services.html`, `fleet-service.html`, `careers.html`, `about.html`, `service-request.html`: static website pages.
 - `assets/css/styles.css`: shared site styling.
 - `assets/js/main.js`: mobile navigation and shared content hydration.
 - `assets/images/`: public website photos copied from the Ray's handoff materials.
