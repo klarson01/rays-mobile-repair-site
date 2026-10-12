@@ -34,9 +34,13 @@ Use web-friendly JPG, PNG, or WebP images and avoid very large original camera f
 
 ## Service request delivery
 
-The Service Request form (`/service-request`, also served at `/contact`) is named `service-request` and is handled by Netlify Forms. It accepts an optional photo or PDF attachment.
+The Service Request page (`/service-request`, also served at `/contact`) uses Ray's Fullbay request link: https://app.fullbay.com/TNEAZS. The primary buttons open Fullbay's hosted form. The button uses the site's accessible text styling instead of Fullbay's image button.
 
-In the Netlify site dashboard, configure an email notification for the `service-request` form so new requests are delivered to Ray's preferred inbox.
+Fullbay handles customer/contact/unit/service-request creation. Fullbay notification settings must be configured on the receiving employee profile: use raysmobilerepair@yahoo.com as that profile's email, select Ray's shop under Bell > Settings > Details > Notification Preferences > Email Notifications, and enable New Service Request (All). Shop Settings Reply-To controls replies, not notification recipients. These settings require verification in Fullbay; website code does not configure them.
+
+An alternate contact form remains inside the expandable "Having trouble" section. It is named `service-request`, uses Netlify Forms, and accepts an optional photo or PDF attachment. These fallback submissions require manual entry into Fullbay. Configure its Netlify email notification to raysmobilerepair@yahoo.com independently of Fullbay notifications.
+
+After deployment, submit one clearly labeled test through Fullbay, confirm it appears under Service > In Process > Service Requests, and verify the notification reaches Ray's inbox. Check fallback email delivery separately.
 
 ## Technician application delivery
 
